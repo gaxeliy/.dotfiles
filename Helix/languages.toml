@@ -103,3 +103,22 @@ name = "binary"
 request = "launch"
 completion = [ { name = "binary", completion = "filename" } ]
 args = { program = "{0}", initCommands = [ "command script import /usr/local/etc/lldb_vscode_rustc_primer.py" ] }
+
+[[language]]
+name = "go"
+auto-format = true
+roots = ["go.work", "go.mod"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = "goimports" }
+
+[[language]]
+name = "templ"
+auto-format = true
+scope = "source.templ"
+file-types = ["templ"]
+roots = ["go.work", "go.mod"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "templ" ]
+formatter = { command = "templ" , args = ["fmt", "--stdin"] }
