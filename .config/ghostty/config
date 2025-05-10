@@ -1,0 +1,6 @@
+gtk-titlebar = false
+keybind = f11=toggle_fullscreen
+background-opacity = 0.95
+theme = Builtin Dark
+font-family = "FiraCode Nerd Font"
+
