@@ -7,19 +7,11 @@ roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 comment-token = "#"
 language-servers = ["pylsp", "ruff"]
 auto-format = true
-# TODO: pyls needs utf-8 offsets
 indent = { tab-width = 4, unit = "    " }
-
-[language-server.gpt]
-command = "helix-gpt"
-config = {}
-args = ["--handler", "codeium", "--triggerCharacters", ""]
-
 
 [language-server.pyright]
 command = "pyright-langserver"
 args = ["--stdio"]
-
 
 [language-server.pyright.config]
 python.analysis.venvPath = "."
@@ -35,7 +27,6 @@ python.analysis.autoImoprtCompletion = true
 python.analysis.reportOptionalSubscript = false
 python.analysis.reportOptionalMemberAccess = false
 
-
 [language-server.ruff]
 command = "ruff"
 args = ["server", "--preview"]
@@ -45,10 +36,10 @@ environment = { "RUFF_TRACE" = "messages" }
 lineLength = 120
 
 [language-server.pylsp.config.pylsp.plugins]
-flake8 = {enabled = true, ignore = ["E501", "C0116"]}
+flake8 = {enabled = false}
 autopep8 = {enabled = false}
 mccabe = {enabled = false}
-pycodestyle = {enabled = true, ignore = ["E501", "C0116"]}
+pycodestyle = {enabled = false}
 pyflakes = {enabled = false}
 pylint = {enabled = false}
 yapf = {enabled = false}
@@ -111,7 +102,7 @@ auto-format = true
 roots = ["go.work", "go.mod"]
 comment-token = "//"
 indent = { tab-width = 4, unit = "    " }
-language-servers = [ "gopls", "gpt" ]
+language-servers = [ "gopls" ]
 formatter = { command = "goimports" }
 
 [[language]]
