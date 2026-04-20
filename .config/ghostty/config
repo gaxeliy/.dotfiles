@@ -1,7 +1,7 @@
 maximize = true
 gtk-titlebar = true
 keybind = f11=toggle_fullscreen
-background-opacity = 0.7
+background-opacity = 1.0
 theme = gruvbox-material-hard-dark
 font-family = "FiraCode Nerd Font"
 
